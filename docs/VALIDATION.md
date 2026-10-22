@@ -1,6 +1,6 @@
 # v0.1.0 验证记录
 
-日期：2026-10-22（Asia/Shanghai）。公开仓库：[Bryce12322/first-100-users](https://github.com/Bryce12322/first-100-users)。文件上传、远程安装与 Release 结果分开记录，不以仓库创建成功代替验证完成。
+日期：2026-10-22（Asia/Shanghai）。公开仓库：[Bryce12322/first-100-users](https://github.com/Bryce12322/first-100-users)。技能和文档已上传，远程安装检查通过；版本分发入口见仓库的 [Release 列表](https://github.com/Bryce12322/first-100-users/releases)。
 
 ## 已完成的检查
 
@@ -11,7 +11,9 @@
 | 项目级本地安装 | 在空白临时项目中执行 `add … --skill first-100-users -a codex --copy -y` 成功，安装位置为 `.agents/skills/first-100-users/` |
 | 安装完整性 | 安装后的 7 个文件与源技能逐字节一致，包含主体、4 份参考文档、Codex 展示配置和许可证 |
 | 安装后列出 | `list -a codex --json` 成功返回 `first-100-users`，作用域为 project |
-| 文档与 YAML | 24 个相对文档链接（含 3 个按 GitHub 页面解析的 Issues 地址）、2 份 Issue 表单及配置和 Codex 展示配置检查通过 |
+| GitHub 远程安装 | Skills CLI 1.5.1 从 `Bryce12322/first-100-users` 克隆并安装成功；安装后的 7 个技能文件与发布源文件逐字节一致，安装后可列出 |
+| 文档与 YAML | 相对文档链接（含按 GitHub 页面解析的 Issues 地址）、2 份 Issue 表单及配置和 Codex 展示配置检查通过 |
+| 在线反馈入口 | GitHub 的模板选择页已显示“试用反馈”和“安装或运行问题”；打开“试用反馈”后字段正常显示，未提交测试 Issue |
 | 公开包范围 | 本包包含 19 个项目文件；本地绝对路径、常见凭据字面量检查未发现命中，不包含上级个人网站或运行台账 |
 
 以上是结构、文件和安装检查，不等于 Agent 已运行完整任务，也不能证明获客效果。凭据检查只覆盖常见格式，不能保证发现所有敏感信息。
@@ -31,7 +33,9 @@ npx skills add "/path/to/first-100-users-release" --skill first-100-users -a cod
 npx skills list -a codex --json
 ```
 
-本次直接调用缓存 CLI 的入口完成上述检查，因此没有验证 `npx` 首次下载。当前上游最新 CLI 文档要求 Node.js 22.20 或更高版本；README 按上游要求编写，不把旧版本地测试等同于最新版兼容认证。[上游说明](https://github.com/vercel-labs/skills)
+本次直接调用缓存 CLI 的入口完成上述检查，因此没有验证 `npx` 首次下载。远程测试使用 `add Bryce12322/first-100-users --skill first-100-users -a codex --copy -y`；环境的普通联网路径无法解析 GitHub 后，在获准联网的隔离临时项目中完成，未覆盖现有技能。
+
+当前上游最新 CLI 文档要求 Node.js 22.20 或更高版本；README 按上游要求编写，不把旧版本地测试等同于最新版兼容认证。[上游说明](https://github.com/vercel-labs/skills)
 
 ## 行为验证：已有证据与待做任务
 
@@ -49,10 +53,10 @@ npx skills list -a codex --json
 
 ## 尚未验证或未执行
 
-- 从远程仓库安装、Release 标签及技能目录展示（公开仓库地址已确认，其他结果待上传后验证）。
+- 技能目录收录、排名或推荐展示；公开仓库及远程安装已单独验证，不据此声称目录收录。
 - 最新 Skills CLI、Windows/Linux、Claude Code/Cursor 等其他环境的端到端使用。
-- GitHub Issue 表单在线显示与提交；当前只做 YAML 和结构检查。
+- GitHub Issue 提交后的处理流程；模板入口与试用反馈表单显示已验证，未为测试创建公开 Issue。
 - 发布、评论、私信、真实用户招募、有效使用、留存和付费结果。
 - 定时任务及持续后台跟进。本次没有创建调度任务。
 
-公开发布前按[发布步骤](LAUNCH.md)检查远程安装，首轮试用后再更新兼容性和行为结果。无需为补齐这些记录公开私人对话或凭据。
+首轮试用后再更新兼容性和行为结果。后续版本按[发布步骤](LAUNCH.md)重新检查发生变化的安装路径。无需为补齐这些记录公开私人对话或凭据。
