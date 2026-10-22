@@ -1,0 +1,46 @@
+name: "试用反馈"
+description: "分享行动建议哪里有用、哪里没有帮助；无需正面评价。"
+title: "[反馈] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢试用。只写你方便公开的部分，不要上传凭据、客户名单、私密浏览记录或完整私密对话。没有实际执行也欢迎反馈。
+  - type: input
+    id: environment
+    attributes:
+      label: "使用环境"
+      description: "客户端及版本、技能版本；不确定的项写未知。"
+      placeholder: "例如：Codex 桌面版，first-100-users v0.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: "产品类型与输入大意"
+      description: "公开网址可选，也可以只说产品类型、所处阶段和你问了什么。"
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: "哪条建议值得做，或为什么都不值得做？"
+      description: "具体指出建议、安装卡点或阻碍，比泛泛评价更有帮助。"
+    validations:
+      required: true
+  - type: textarea
+    id: action
+    attributes:
+      label: "后来采取了什么行动？"
+      description: "没做也可以，写原因；尚未观察到结果就明确说明。"
+  - type: textarea
+    id: comparison
+    attributes:
+      label: "与直接问 AI 相比"
+      description: "多了什么帮助，增加了什么负担？不需要额外跑对照。"
+  - type: checkboxes
+    id: followup
+    attributes:
+      label: "后续询问（可选）"
+      options:
+        - label: "愿意在本 Issue 下接受一次后续询问。"

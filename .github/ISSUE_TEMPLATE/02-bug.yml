@@ -1,0 +1,35 @@
+name: "安装或运行问题"
+description: "报告技能未被识别、参考文档缺失、工具失败或不符合预期的行为。"
+title: "[问题] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请移除命令和日志中的 token、密钥、个人路径、客户数据及无关对话。无需为了复现去发布内容或消耗额外付费额度。
+  - type: input
+    id: environment
+    attributes:
+      label: "环境和版本"
+      description: "客户端、系统、技能版本；使用 CLI 安装时附 Node.js 与 Skills CLI 版本。未知项可略。"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "怎样遇到这个问题？"
+      description: "安装方式或去除敏感内容的输入，以及出现问题的步骤。"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "原本希望发生什么？"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "实际发生了什么？"
+      description: "可以附去除敏感内容的报错片段或截图。"
+    validations:
+      required: true

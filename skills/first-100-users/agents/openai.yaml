@@ -1,0 +1,4 @@
+interface:
+  display_name: "首批用户获客执行"
+  short_description: "为已上线产品选择低成本获客动作，经确认执行并跟进真实用户反馈"
+  default_prompt: "使用 $first-100-users 分析我的产品，推荐最小获客行动，经我确认后执行并跟进结果。"
